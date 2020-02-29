@@ -31,8 +31,11 @@ public class GenericsMax <E extends Comparable<E>>{
             maximum=anyNo[0];
         }
     }
+    printmax(maximum);
     return maximum;
     }
 
-
+    public <E extends Comparable<E>> E printmax(E maximum){
+        System.out.println("Maximum is:"+maximum);
+    }
 }
