@@ -46,4 +46,25 @@ public class GenericTest {
         Comparable check = obj.maxValue();
         Assert.assertEquals(10.5,(float)check,1);
     }
+
+    @Test
+    public void checkmax_at_first_forString() {
+        GenericsMax obj= new GenericsMax("pineapple","kiwi","mango");
+        Comparable check = obj.maxValue();
+        Assert.assertEquals("largest Strings is:","pineapple",check);
+    }
+
+    @Test
+    public void checkmax_at_second_forString() {
+        GenericsMax obj= new GenericsMax("kiwi","pineapple","mango");
+        Comparable check = obj.maxValue();
+        Assert.assertEquals("largest Strings is:","pineapple",check);
+    }
+
+    @Test
+    public void checkmax_at_third_forString() {
+        GenericsMax obj= new GenericsMax("kiwi","mango","pineapple");
+        Comparable check = obj.maxValue();
+        Assert.assertEquals("largest Strings is:","pineapple",check);
+    }
 }
