@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Collections;
+
 public class GenericsMax <E extends Comparable<E>>{
     E firstNo;
     E secondNo;
@@ -13,7 +16,7 @@ public class GenericsMax <E extends Comparable<E>>{
         return getMax(firstNo,secondNo,thirdNo);
     }
 
-    public <E extends Comparable<E>> E getMax(E firstNo, E secondNo, E thirdNo) {
+    public static <E extends Comparable<E>> E getMax(E firstNo, E secondNo, E thirdNo , E... anyNo) {
     E maximum = firstNo;
     if (secondNo.compareTo(maximum)>0){
         maximum=secondNo;
@@ -21,11 +24,15 @@ public class GenericsMax <E extends Comparable<E>>{
     if(thirdNo.compareTo(maximum)>0){
         maximum=thirdNo;
     }
+
+    if(anyNo.length!=0){
+        Arrays.sort(anyNo, Collections.reverseOrder());
+        if(maximum.compareTo(anyNo[0])<0){
+            maximum=anyNo[0];
+        }
+    }
     return maximum;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Welcome To Generics!!");
-    }
 
 }
