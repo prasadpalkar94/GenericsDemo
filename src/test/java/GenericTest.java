@@ -25,4 +25,25 @@ public class GenericTest {
         Comparable check = obj.maxValue();
         Assert.assertEquals(22,check);
     }
+
+    @Test
+    public void checkmax_at_first_forFloat() {
+        GenericsMax obj= new GenericsMax(5.5f,2.5f,1.5f);
+        Comparable check = obj.maxValue();
+        Assert.assertEquals(5.5,(float)check,1);
+    }
+
+    @Test
+    public void checkmax_at_second_forFloat() {
+        GenericsMax obj= new GenericsMax(3.5f,5.5f,1.5f);
+        Comparable check = obj.maxValue();
+        Assert.assertEquals(5.5,(float)check,1);
+    }
+
+    @Test
+    public void checkmax_at_third_forFloat() {
+        GenericsMax obj= new GenericsMax(5.5f,7.5f,10.5f);
+        Comparable check = obj.maxValue();
+        Assert.assertEquals(10.5,(float)check,1);
+    }
 }
